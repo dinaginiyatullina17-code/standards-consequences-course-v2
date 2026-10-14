@@ -1,7 +1,7 @@
 /* Пробное визуальное обновление старой версии курса. */
 
 .hero-placeholder--cover {
-  background: var(--ku-brand-strong) url("assets/hero-domino-plain.png") center / cover no-repeat;
+  background: var(--ku-brand-strong) url("assets/hero-stop-standard.png") center / cover no-repeat;
 }
 
 .hero-placeholder--cover::after {
@@ -98,12 +98,12 @@
 .fpr-feedback-visual figcaption b { color: #ffe580; }
 
 
-.kf-carousel { max-width: 52rem; margin: 1.25rem auto 2.5rem; }
-.kf-carousel__nav { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: .75rem; }
-.kf-carousel__nav button { padding: .65rem 1rem; border: 1px solid var(--ku-border); border-radius: var(--ku-radius-m); color: var(--ku-text); background: var(--ku-card); font-weight: 750; cursor: pointer; }
-.kf-carousel__nav button:hover:not(:disabled), .kf-carousel__nav button:focus-visible { border-color: var(--ku-brand); color: var(--ku-brand-strong); }
-.kf-carousel__nav button:disabled { opacity: .4; cursor: default; }
-.kf-carousel__status { color: var(--ku-text-muted); font-size: .9rem; font-weight: 800; white-space: nowrap; }
+.chain-carousel { max-width: 52rem; margin: 1.25rem auto 2.5rem; }
+.chain-carousel__nav { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: .75rem; }
+.chain-carousel__nav button { padding: .65rem 1rem; border: 1px solid var(--ku-border); border-radius: var(--ku-radius-m); color: var(--ku-text); background: var(--ku-card); font-weight: 750; cursor: pointer; }
+.chain-carousel__nav button:hover:not(:disabled), .chain-carousel__nav button:focus-visible { border-color: var(--ku-brand); color: var(--ku-brand-strong); }
+.chain-carousel__nav button:disabled { opacity: .4; cursor: default; }
+.chain-carousel__status { color: var(--ku-text-muted); font-size: .9rem; font-weight: 800; white-space: nowrap; }
 .chain-infographics--carousel { display: block; max-width: none; margin: 0; }
 .chain-infographics--carousel .chain-infographic[hidden] { display: none !important; }
 .chain-infographics--carousel .chain-panel.open { max-height: 2400px; }
@@ -236,3 +236,7 @@
 @media (prefers-reduced-motion: reduce) {
   .visual-image-slot__mark { transform: none; }
 }
+
+.chain-carousel .chain-toggle { cursor: default; pointer-events: none; }
+.chain-carousel .chain-plus { display: none; }
+.chain-carousel .chain-panel { max-height: none !important; opacity: 1; overflow: visible; }

@@ -2,61 +2,77 @@
   "use strict";
 
   const extensions = [".webp", ".png", ".jpg", ".jpeg"];
-
-  function loadVisual(slot) {
+  document.querySelectorAll("[data-visual-image]").forEach(slot => {
     const base = slot.getAttribute("data-visual-image");
     if (!base) return;
     let index = 0;
-
     function tryNext() {
       if (index >= extensions.length) return;
       const img = new Image();
       img.alt = slot.getAttribute("data-alt") || "";
-      img.onload = function () {
+      img.onload = () => {
         slot.replaceChildren(img);
         slot.classList.add("has-image");
       };
-      img.onerror = function () {
-        index += 1;
-        tryNext();
-      };
+      img.onerror = () => { index += 1; tryNext(); };
       img.src = base + extensions[index];
     }
-
     tryNext();
-  }
-
-  document.querySelectorAll("[data-visual-image]").forEach(loadVisual);
-})();
-
-(function () {
-  "use strict";
-  const carousel = document.querySelector(".kf-carousel");
-  if (!carousel) return;
-  const slides = [...carousel.querySelectorAll(".chain-infographic")];
-  const previous = carousel.querySelector(".kf-carousel__prev");
-  const next = carousel.querySelector(".kf-carousel__next");
-  const status = carousel.querySelector(".kf-carousel__status");
-  let current = 0;
-
-  function show(index) {
-    current = Math.max(0, Math.min(index, slides.length - 1));
-    slides.forEach((slide, position) => {
-      slide.hidden = position !== current;
-      slide.classList.toggle("is-current", position === current);
-    });
-    status.textContent = `${current + 1} из ${slides.length}`;
-    previous.disabled = current === 0;
-    next.disabled = current === slides.length - 1;
-  }
-
-  previous.addEventListener("click", () => show(current - 1));
-  next.addEventListener("click", () => show(current + 1));
-  carousel.addEventListener("keydown", event => {
-    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
-      event.preventDefault();
-      show(current + (event.key === "ArrowRight" ? 1 : -1));
-    }
   });
-  show(0);
+
+  document.querySelectorAll(".chain-carousel").forEach(carousel => {
+    const slides = [...carousel.querySelectorAll(".chain-infographic")];
+    const previous = carousel.querySelector(".chain-carousel__prev");
+    const next = carousel.querySelector(".chain-carousel__next");
+    const status = carousel.querySelector(".chain-carousel__status");
+    let current = 0;
+    if (slides.length === 1) carousel.querySelector(".chain-carousel__nav").hidden = true;
+
+    slides.forEach(slide => {
+      const trigger = slide.querySelector(".chain-toggle");
+      const panel = slide.querySelector(".chain-panel");
+      trigger.removeAttribute("onclick");
+      trigger.setAttribute("aria-expanded", "true");
+      trigger.setAttribute("tabindex", "-1");
+      trigger.classList.add("open");
+      panel.classList.add("open");
+    });
+
+    function markViewed() {
+      const slide = slides[current];
+      if (!slide || !slide.getClientRects().length) return;
+      const bounds = slide.getBoundingClientRect();
+      if (bounds.bottom < 0 || bounds.top > innerHeight) return;
+      const trigger = slide.querySelector(".chain-toggle");
+      if (trigger.dataset.revealId && typeof recordReveal === "function" &&
+          !trigger.classList.contains("was-read")) recordReveal(trigger);
+    }
+
+    function show(index) {
+      current = Math.max(0, Math.min(index, slides.length - 1));
+      slides.forEach((slide, position) => {
+        slide.hidden = position !== current;
+        slide.classList.toggle("is-current", position === current);
+      });
+      status.textContent = `${current + 1} из ${slides.length}`;
+      previous.disabled = current === 0;
+      next.disabled = current === slides.length - 1;
+      markViewed();
+      requestAnimationFrame(markViewed);
+    }
+
+    previous.addEventListener("click", () => { markViewed(); show(current - 1); });
+    next.addEventListener("click", () => { markViewed(); show(current + 1); });
+    carousel.addEventListener("keydown", event => {
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        event.preventDefault();
+        markViewed();
+        show(current + (event.key === "ArrowRight" ? 1 : -1));
+      }
+    });
+    const observer = new IntersectionObserver(markViewed, { threshold: 0.1 });
+    observer.observe(carousel);
+    addEventListener("scroll", markViewed, { passive: true });
+    show(0);
+  });
 })();
