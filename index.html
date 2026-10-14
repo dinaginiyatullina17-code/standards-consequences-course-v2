@@ -94,12 +94,16 @@
           <p>Когда ты не даешь своевременную обратную связь сотрудникам, с Гостями могут произойти неприятности и даже опасные ситуации. Недовольство Гостя, его попадание в больницу и смерть — вот к чему может привести пропущенное нарушение стандарта.</p>
         </blockquote>
 
-        <div class="visual-pause visual-pause--domino fade-in" aria-label="Цепочка: нарушение, риск, последствие">
-          <div class="visual-pause__intro"><span>Одно нарушение</span><strong>может запустить цепочку</strong></div>
-          <div class="domino-track" aria-hidden="true">
-            <span class="domino-piece">!</span><i></i><span class="domino-piece">⚠</span><i></i><span class="domino-piece">✕</span>
+        <div class="visual-pause visual-pause--chain fade-in" aria-label="Пример: температура котлеты ниже 68 градусов, отклонение не замечено, Гость может получить сырой продукт и отравиться">
+          <strong class="visual-pause__title">Где остановить цепочку?</strong>
+          <div class="risk-chain">
+            <span>Температура котлеты ниже 68 °C</span>
+            <i aria-hidden="true">→</i>
+            <span>Отклонение не замечено</span>
+            <i aria-hidden="true">→</i>
+            <span>Гость может получить сырой продукт и отравиться</span>
           </div>
-          <div class="visual-pause__labels"><span>Нарушение</span><span>Риск</span><span>Последствие</span></div>
+          <p class="visual-pause__action">Проверь результат замера и останови передачу продукта до исправления.</p>
         </div>
 
         <div class="next-row"><button class="btn-next" type="button" onclick="goNext('intro', 'consequences')">К последствиям <span aria-hidden="true">→</span></button></div>
@@ -132,7 +136,7 @@
 
         <figure class="visual-image-slot fade-in" data-visual-image="images/risk-chain-shift" data-alt="Сотрудник замечает нарушение и останавливает опасную цепочку на смене">
           <div class="visual-image-slot__mark" aria-hidden="true">✦</div>
-          <figcaption><strong>Одно нарушение — целая цепочка последствий</strong><span>Будущая 3D-иллюстрация · сцена на кухне</span></figcaption>
+          <figcaption><strong>Одно нарушение — целая цепочка последствий</strong><span>Сцена на кухне · нарушение стандарта</span></figcaption>
         </figure>
 
         <div class="section-heading fade-in examples-heading">
@@ -251,7 +255,7 @@
 
         <figure class="visual-image-slot fade-in" data-visual-image="images/control-in-the-moment" data-alt="Руководитель наблюдает за соблюдением процедуры в момент работы">
           <div class="visual-image-slot__mark" aria-hidden="true">◎</div>
-          <figcaption><strong>Контроль работает в момент действия</strong><span>Будущая 3D-иллюстрация · наблюдение на смене</span></figcaption>
+          <figcaption><strong>Контроль работает в момент действия</strong><span>Наблюдение на смене</span></figcaption>
         </figure>
 
         <div class="section-heading fade-in">
@@ -332,15 +336,9 @@
           <div class="feedback-box" id="sort-feedback" aria-live="polite"></div>
         </div>
 
-        <div class="fpr-orbits fade-in" aria-label="Факт, Последствие, Рекомендация">
-          <div class="fpr-orbit"><span>Ф</span><strong>Факт</strong></div><i aria-hidden="true">→</i>
-          <div class="fpr-orbit"><span>П</span><strong>Последствие</strong></div><i aria-hidden="true">→</i>
-          <div class="fpr-orbit"><span>Р</span><strong>Рекомендация</strong></div>
-        </div>
-
         <figure class="visual-image-slot fade-in" data-visual-image="images/fpr-dialogue" data-alt="Руководитель спокойно даёт сотруднику обратную связь по алгоритму Факт Последствие Рекомендация">
           <div class="visual-image-slot__mark" aria-hidden="true">●</div>
-          <figcaption><strong>Спокойный разговор один на один</strong><span>Будущая 3D-иллюстрация · обратная связь по ФПР</span></figcaption>
+          <figcaption><strong>Спокойный разговор один на один</strong><span>Обратная связь по ФПР</span></figcaption>
         </figure>
 
         <div class="section-heading fade-in fpr-heading">
@@ -372,7 +370,7 @@
 
         <figure class="visual-image-slot fade-in" data-visual-image="images/stop-and-correct" data-alt="Руководитель останавливает передачу продукта и помогает сотруднику исправить действие">
           <div class="visual-image-slot__mark" aria-hidden="true">!</div>
-          <figcaption><strong>Сначала остановить риск, затем помочь исправить</strong><span>Будущая 3D-иллюстрация · ситуация на линии сборки</span></figcaption>
+          <figcaption><strong>Сначала остановить риск, затем помочь исправить</strong><span>Ситуация на линии сборки</span></figcaption>
         </figure>
 
         <section class="shift-trainer" id="shift-trainer" aria-labelledby="trainer-title">
@@ -410,7 +408,7 @@
         </div>
         <figure class="visual-image-slot fade-in" data-visual-image="images/control-system-cycle" data-alt="Пятиминутка, наблюдение и повторная проверка образуют систему контроля">
           <div class="visual-image-slot__mark" aria-hidden="true">↻</div>
-          <figcaption><strong>Контроль — это повторяющийся цикл</strong><span>Будущая 3D-иллюстрация · три действия в одной сцене</span></figcaption>
+          <figcaption><strong>Контроль — это повторяющийся цикл</strong><span>Три действия в одной сцене</span></figcaption>
         </figure>
 
         <div class="control-cycle fade-in" aria-label="Цикл контроля: наблюдение, реакция, проверка">
