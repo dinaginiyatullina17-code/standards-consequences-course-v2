@@ -1,0 +1,209 @@
+/* Пробное визуальное обновление старой версии курса. */
+
+.visual-pause,
+.visual-image-slot,
+.fpr-orbits {
+  margin: clamp(2rem, 5vw, 4rem) auto;
+}
+
+.visual-pause {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  border: 1px solid var(--ku-border-soft);
+  border-radius: var(--ku-radius-xl);
+  background:
+    radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--ku-contrast) 34%, transparent), transparent 30%),
+    var(--ku-grad-brand-soft);
+  box-shadow: var(--ku-shadow-m);
+}
+
+.visual-pause__intro {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  color: var(--ku-text);
+}
+
+.visual-pause__intro span { color: var(--ku-text-muted); }
+.visual-pause__intro strong { font-size: clamp(1.35rem, 3vw, 2rem); }
+
+.domino-track {
+  display: grid;
+  grid-template-columns: auto 1fr auto 1fr auto;
+  align-items: center;
+  gap: clamp(.5rem, 2vw, 1.25rem);
+  margin-block: clamp(1.5rem, 4vw, 2.5rem) 1rem;
+}
+
+.domino-piece {
+  display: grid;
+  place-items: center;
+  width: clamp(3.25rem, 10vw, 5rem);
+  aspect-ratio: .7;
+  border-radius: var(--ku-radius-m);
+  color: var(--ku-text-on-dark);
+  background: var(--ku-brand);
+  border: .35rem solid color-mix(in srgb, var(--ku-brand) 70%, white);
+  box-shadow: .4rem .65rem 0 color-mix(in srgb, var(--ku-brand) 30%, transparent), var(--ku-shadow-m);
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  font-weight: 800;
+  transform: rotate(-4deg);
+}
+
+.domino-piece:nth-of-type(2) { background: var(--ku-warning); transform: rotate(5deg); }
+.domino-piece:nth-of-type(3) { background: var(--ku-danger); transform: rotate(-7deg); }
+.domino-track i { height: .35rem; border-radius: 999px; background: var(--ku-contrast); box-shadow: var(--ku-shadow-s); }
+
+.visual-pause__labels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  text-align: center;
+  color: var(--ku-text-muted);
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.visual-image-slot {
+  position: relative;
+  min-height: clamp(18rem, 48vw, 31rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  overflow: hidden;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border: .15rem dashed var(--ku-brand);
+  border-radius: var(--ku-radius-xl);
+  background:
+    radial-gradient(circle at 16% 18%, color-mix(in srgb, var(--ku-brand) 24%, transparent), transparent 26%),
+    radial-gradient(circle at 86% 76%, color-mix(in srgb, var(--ku-contrast) 26%, transparent), transparent 28%),
+    var(--ku-surface-2);
+  box-shadow: var(--ku-shadow-m);
+  text-align: center;
+}
+
+.visual-image-slot::before,
+.visual-image-slot::after {
+  content: "";
+  position: absolute;
+  width: clamp(5rem, 16vw, 9rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: .85rem solid color-mix(in srgb, var(--ku-brand) 22%, transparent);
+  pointer-events: none;
+}
+
+.visual-image-slot::before { inset: -2rem auto auto -2rem; }
+.visual-image-slot::after { inset: auto -2rem -2rem auto; border-color: color-mix(in srgb, var(--ku-contrast) 25%, transparent); }
+
+.visual-image-slot.has-image {
+  display: block;
+  padding: 0;
+  border-style: solid;
+  background: var(--ku-surface);
+}
+
+.visual-image-slot.has-image::before,
+.visual-image-slot.has-image::after { display: none; }
+
+.visual-image-slot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+}
+
+.visual-image-slot__mark {
+  display: grid;
+  place-items: center;
+  width: clamp(4.5rem, 12vw, 7rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: var(--ku-contrast-on);
+  background: var(--ku-contrast);
+  box-shadow: .45rem .65rem 0 color-mix(in srgb, var(--ku-contrast) 25%, transparent), var(--ku-shadow-l);
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  font-weight: 800;
+  transform: rotate(-7deg);
+}
+
+.visual-image-slot figcaption {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  max-width: 38rem;
+}
+
+.visual-image-slot figcaption strong {
+  color: var(--ku-text);
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+}
+
+.visual-image-slot figcaption span { color: var(--ku-text-muted); }
+
+.fpr-orbits {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: clamp(.5rem, 2vw, 1.25rem);
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  border-radius: var(--ku-radius-xl);
+  background: var(--ku-surface-2);
+  box-shadow: var(--ku-shadow-s);
+}
+
+.fpr-orbit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  text-align: center;
+}
+
+.fpr-orbit span {
+  display: grid;
+  place-items: center;
+  width: clamp(3.75rem, 10vw, 5.5rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: var(--ku-brand-on);
+  background: var(--ku-brand);
+  box-shadow: inset -.45rem -.55rem 0 color-mix(in srgb, black 12%, transparent), var(--ku-shadow-brand);
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: 850;
+}
+
+.fpr-orbit:nth-of-type(2) span { background: var(--ku-contrast); color: var(--ku-contrast-on); }
+.fpr-orbit:nth-of-type(3) span { background: var(--ku-success); color: white; }
+.fpr-orbits > i { color: var(--ku-brand); font-size: clamp(1.5rem, 4vw, 2.25rem); font-style: normal; font-weight: 800; }
+
+.example-chain,
+.final-question,
+.closed-question,
+.trainer-card {
+  box-shadow: var(--ku-shadow-s);
+}
+
+.example-chain[open],
+.final-question:focus-within,
+.closed-question:focus-within {
+  box-shadow: var(--ku-shadow-m);
+}
+
+@media (max-width: 42rem) {
+  .fpr-orbits { grid-template-columns: 1fr; }
+  .fpr-orbits > i { transform: rotate(90deg); }
+  .domino-track { gap: .35rem; }
+  .visual-pause__labels { font-size: .72rem; gap: .35rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .domino-piece,
+  .visual-image-slot__mark { transform: none; }
+}

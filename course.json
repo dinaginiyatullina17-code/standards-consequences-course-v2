@@ -1,0 +1,13 @@
+{
+    "identifier":  "standards-consequences-course",
+    "title":  "К чему приводят нарушения стандартов",
+    "scorm_id":  "standards_consequences",
+    "scorm_ids":  {
+                      "manifest":  "standards_consequences",
+                      "organization":  "ORG_k_chemu_privodyat_narusheniya_standartov",
+                      "item":  "ITEM_1",
+                      "resource":  "RES_1"
+                  },
+    "previous_zip":  "../standards_consequences_lms_clean_reset.zip",
+    "complete_mode":  "lms"
+}

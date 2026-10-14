@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="ru" data-audience="ms" data-direction="restoran" data-ku-course="standards-consequences-course" data-ku-complete-mode="lms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7968E8">
+  <meta name="description" content="Интерактивный курс о последствиях нарушения стандартов и системе контроля.">
+  <title>К чему приводят нарушения стандартов</title>
+  <link rel="stylesheet" href="kuds/css/kuds.css">
+  <link rel="stylesheet" href="style.css?v=37">
+  <link rel="stylesheet" href="ms-restoran.css?v=37">
+  <link rel="stylesheet" href="progression.css?v=37">
+  <link rel="stylesheet" href="visual-refresh.css?v=1">
+</head>
+<body class="is-home">
+  <header id="top-nav" class="home-nav-hidden" aria-label="Навигация по курсу">
+    <div class="nav-inner">
+
+      <span id="nav-chapter"></span>
+      <span id="nav-progress"></span>
+    </div>
+    <div id="progress-bar-wrap" aria-hidden="true"><div id="progress-bar"></div></div>
+  </header>
+
+  <main>
+    <section class="page active" id="page-home">
+      <div class="hero-placeholder hero-placeholder--cover">
+        <div class="hero-placeholder__grid" aria-hidden="true"></div>
+        <div class="hero-placeholder__content">
+          <h1>К чему приводят<br>нарушения стандартов</h1>
+          <p class="hero-lead">Безопасность Гостя начинается с того, что ты замечаешь нарушение и действуешь сразу.</p>
+          <button class="btn-next hero-cta" type="button" onclick="startCourse()">Начать курс <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+
+      <div class="content-wrap home-content">
+        <div class="challenge-card fade-in" id="challenge-card" tabindex="-1">
+          <p>Бывало ли у тебя чувство, что нарушения стандартов — это мелочь, которая не приводит к серьёзным последствиям?</p>
+          <strong>А если одно нарушение может стоить жизни Гостя?</strong>
+        </div>
+        <p class="challenge-bridge fade-in">Сейчас разберёмся, почему даже одно пропущенное нарушение — не мелочь. Пройди курс до конца и увидишь, как вовремя остановить риск.</p>
+
+        <div class="section-heading fade-in">
+          <h2>От одного нарушения — к системе контроля</h2>
+        </div>
+        <div class="chapter-grid course-chapter-grid">
+          <button class="chapter-card fade-in" id="home-card-1" type="button" onclick="navigateTo('intro')">
+            <span class="chapter-num">01</span><span><h3>Введение</h3></span><span class="chapter-lock" aria-hidden="true">×</span>
+          </button>
+          <button class="chapter-card fade-in locked" id="home-card-2" type="button" onclick="navigateTo('consequences')" aria-disabled="true" disabled>
+            <span class="chapter-num">02</span><span><h3>Последствия нарушений</h3></span><span class="chapter-lock" aria-hidden="true">×</span>
+          </button>
+          <button class="chapter-card fade-in locked" id="home-card-3" type="button" onclick="navigateTo('control')" aria-disabled="true" disabled>
+            <span class="chapter-num">03</span><span><h3>Контроль сотрудников</h3></span><span class="chapter-lock" aria-hidden="true">×</span>
+          </button>
+          <button class="chapter-card fade-in locked" id="home-card-4" type="button" onclick="navigateTo('algorithm')" aria-disabled="true" disabled>
+            <span class="chapter-num">04</span><span><h3>Алгоритм действий</h3></span><span class="chapter-lock" aria-hidden="true">×</span>
+          </button>
+          <button class="chapter-card fade-in locked" id="home-card-5" type="button" onclick="navigateTo('system')" aria-disabled="true" disabled>
+            <span class="chapter-num">05</span><span><h3>Контроль как система</h3></span><span class="chapter-lock" aria-hidden="true">×</span>
+          </button>
+          <button class="chapter-card fade-in locked" id="home-card-6" type="button" onclick="navigateTo('conclusion')" aria-disabled="true" disabled>
+            <span class="chapter-num">06</span><span><h3>Заключение</h3></span><span class="chapter-lock" aria-hidden="true">×</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page-intro">
+      <div class="chapter-banner chapter-banner--alert">
+        <div class="chapter-banner__inner">
+          <h2>Введение</h2>
+        </div>
+      </div>
+      <div class="content-wrap">
+        <div class="lead-statement fade-in">
+          <span class="lead-mark" aria-hidden="true">!</span>
+          <p>Ты отвечаешь за безопасность и качество еды.</p>
+        </div>
+
+        <div class="micro-choice fade-in" id="intro-choice">
+          <h3>Насколько серьёзными могут быть последствия одного нарушения?</h3>
+          <div class="choice-row">
+            <button type="button" onclick="revealIntro(this, false)">Скорее незначительными</button>
+            <button type="button" onclick="revealIntro(this, true)">Вплоть до угрозы жизни</button>
+          </div>
+          <div class="feedback-box" id="intro-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="body-text fade-in">
+          <p>Запомни небольшое, но очень важное правило:</p>
+        </div>
+        <blockquote class="rule-quote fade-in">
+          <p>Когда ты не даешь своевременную обратную связь сотрудникам, с Гостями могут произойти неприятности и даже опасные ситуации. Недовольство Гостя, его попадание в больницу и смерть — вот к чему может привести пропущенное нарушение стандарта.</p>
+        </blockquote>
+
+        <div class="visual-pause visual-pause--domino fade-in" aria-label="Цепочка: нарушение, риск, последствие">
+          <div class="visual-pause__intro"><span>Одно нарушение</span><strong>может запустить цепочку</strong></div>
+          <div class="domino-track" aria-hidden="true">
+            <span class="domino-piece">!</span><i></i><span class="domino-piece">⚠</span><i></i><span class="domino-piece">✕</span>
+          </div>
+          <div class="visual-pause__labels"><span>Нарушение</span><span>Риск</span><span>Последствие</span></div>
+        </div>
+
+        <div class="next-row"><button class="btn-next" type="button" onclick="goNext('intro', 'consequences')">К последствиям <span aria-hidden="true">→</span></button></div>
+      </div>
+    </section>
+
+    <section class="page" id="page-consequences">
+      <div class="chapter-banner chapter-banner--danger">
+        <div class="chapter-banner__inner">
+          <h2>Последствия нарушений</h2>
+        </div>
+      </div>
+      <div class="content-wrap">
+        <div class="body-text fade-in">
+          <p>Если из-за невнимательности или в погоне за показателями ты будешь закрывать глаза на любые нарушения стандартов, это может закончиться печально.</p>
+        </div>
+
+        <div class="section-heading fade-in">
+          <h3>Пирамида последствий</h3>
+          <p>Чем выше уровень, тем тяжелее цена пропущенного нарушения.</p>
+          <p class="reveal-prompt"><strong>Нажми на уровень, чтобы увидеть связь.</strong><br>Раскрой все четыре уровня пирамиды.</p>
+        </div>
+        <div class="consequence-pyramid fade-in" aria-label="Пирамида последствий нарушений">
+          <button class="pyramid-level level-4" type="button" onclick="selectConsequence(this, 'Смерть Гостя — крайнее последствие опасной цепочки, которую не остановили вовремя.')"><span>Смерть Гостя</span></button>
+          <button class="pyramid-level level-3" type="button" onclick="selectConsequence(this, 'Больница и серьёзный вред здоровью — возможный итог нарушения требований безопасности.')"><span>Больница</span></button>
+          <button class="pyramid-level level-2" type="button" onclick="selectConsequence(this, 'Отравление или аллергическая реакция затрагивают здоровье одного или сразу многих Гостей.')"><span>Опасность для здоровья</span></button>
+          <button class="pyramid-level level-1" type="button" onclick="selectConsequence(this, 'Недовольство и негативный отзыв могут быть первыми видимыми сигналами того, что стандарт уже нарушен.')"><span>Недовольство и негативный отзыв</span></button>
+        </div>
+        <div class="pyramid-detail" id="pyramid-detail" aria-live="polite">Выбери любой уровень пирамиды.</div>
+
+        <figure class="visual-image-slot fade-in" data-visual-image="images/risk-chain-shift" data-alt="Сотрудник замечает нарушение и останавливает опасную цепочку на смене">
+          <div class="visual-image-slot__mark" aria-hidden="true">✦</div>
+          <figcaption><strong>Одно нарушение — целая цепочка последствий</strong><span>Будущая 3D-иллюстрация · сцена на кухне</span></figcaption>
+        </figure>
+
+        <div class="section-heading fade-in examples-heading">
+          <h3 class="section-heading__title">Реальные цепочки на смене</h3>
+          <p class="reveal-prompt"><strong>Раскрой каждую цепочку.</strong><br>Нажми на название примера или на «+», чтобы увидеть, к чему приводит нарушение.</p>
+        </div>
+        <p class="body-text">Одно нарушение может запустить цепочку последствий. В примерах о пищевой безопасности отмечены КФ — важнейшие факторы безопасности пищевых продуктов. Другие примеры показывают, как стандарты защищают сотрудников и качество продукта.</p>
+        <h4 class="chain-group-title chain-group-title--food"><span class="chain-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6z"/><path d="m8 12 3 3 5-6"/></svg></span><span>Безопасность пищевых продуктов</span></h4>
+        <div class="chain-infographics"><article class="chain-infographic chain-infographic--risk">
+<button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Просроченное мыло для рук</strong><span class="chain-kf">КФ · Правила личной гигиены</span></span><span class="chain-plus" aria-hidden="true">+</span></button>
+<div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">Сотрудник заметил, что у мыла для рук истёк срок годности, но продолжил им пользоваться. Такое средство нельзя считать подходящим для соблюдения процедуры мытья рук.</p>
+<div class="chain-flow" aria-label="Цепочка последствий: Просроченное мыло для рук"><div class="chain-step"><strong>Срок годности истёк</strong><small>Просроченное мыло остаётся у раковины</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Мыло продолжают использовать</strong><small>Сотрудники моют руки средством с истёкшим сроком годности</small><span class="kf-label">КФ · Правила личной гигиены</span></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Процедура не обеспечена</strong><small>Нельзя быть уверенным, что мытьё рук выполнено с подходящим средством</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step chain-step--result"><strong>Риск для Гостя</strong><small>Загрязнение с рук может попасть в продукт и стать причиной отравления</small></div></div></div></div></article>
+<article class="chain-infographic chain-infographic--risk">
+<button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Контакт с рыбой и креветками</strong><span class="chain-kf">КФ · Защита от загрязнений</span></span><span class="chain-plus" aria-hidden="true">+</span></button>
+<div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">Креветки берут только щипцами, а не руками. Это не отменяет требований к мытью рук после работы с рыбой и креветками и соблюдения процедур работы с аллергенами.</p>
+<div class="chain-flow" aria-label="Цепочка последствий: Контакт с рыбой и креветками"><div class="chain-step"><strong>Час пик</strong><small>Сотрудник переключается между операциями</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Пропущено мытьё рук</strong><small>После работы с рыбой и креветками сотрудник не моет руки</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Перенос аллергена</strong><small>Аллерген попадает в другое блюдо</small><span class="kf-label">КФ · Защита от загрязнений</span></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step chain-step--result"><strong>Блюдо получает Гость с аллергией</strong><small>Возможное последствие — аллергическая реакция</small></div></div></div></div></article>
+<article class="chain-infographic chain-infographic--risk"><button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Наггетсы сверх PLS — смешивание партий</strong><span class="chain-kf">КФ · Правила хранения</span></span><span class="chain-plus" aria-hidden="true">+</span></button><div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">Сотрудник приготовил больше наггетсов, чем требовала PLS. Свободных ячеек в PHU не осталось, и он решил добавить свежую партию к одной из тех, у которых уже идёт свой срок хранения в PHU.</p><div class="chain-flow" aria-label="Цепочка последствий: Наггетсы сверх PLS — смешивание партий"><div class="chain-step"><strong>Приготовлено больше необходимого</strong><small>Количество наггетсов превышает потребность по PLS</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Нет свободной ячейки</strong><small>Свежую партию добавляют к партии, уже находящейся в PHU</small><span class="kf-label">КФ · Правила хранения</span></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Сроки партий смешаны</strong><small>У партий разное время приготовления, а в ячейке они хранятся вместе</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step chain-step--result"><strong>Риск превышения срока</strong><small>Часть наггетсов может остаться в PHU дольше допустимого и попасть к Гостю</small></div></div></div></div></article>
+<article class="chain-infographic chain-infographic--risk"><button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Температура котлет ниже 68 °C</strong><span class="chain-kf">КФ · Замер температуры котлет, приготовленных в жарочном шкафу</span></span><span class="chain-plus" aria-hidden="true">+</span></button><div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">При замере говяжьих котлет сотрудник не обратил внимания, что температура мяса опустилась ниже 68 °C. Он продолжил работу, не отреагировав на показание термометра.</p><div class="chain-flow" aria-label="Цепочка последствий: Температура котлет ниже 68 °C"><div class="chain-step"><strong>Замер выполнен</strong><small>Термометр показывает температуру мяса ниже 68 °C</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Отклонение пропущено</strong><small>Сотрудник не обращает внимания на показание</small><span class="kf-label">КФ · Замер температуры котлет, приготовленных в жарочном шкафу</span></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Работа продолжается</strong><small>Котлеты продолжают использовать без реакции на отклонение</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step chain-step--result"><strong>Риск для Гостя</strong><small>Гость может получить сырой продукт и отравиться</small></div></div></div></div></article>
+<article class="chain-infographic chain-infographic--risk"><button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Следы грызунов на складе</strong><span class="chain-kf">КФ · Проблемы с вредителями</span></span><span class="chain-plus" aria-hidden="true">+</span></button><div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">Сотрудник заметил следы грызунов рядом с упаковками продуктов на складе, но проигнорировал их: он решил, что продукты защищены, поскольку находятся в коробках, и продолжил использовать их.</p><div class="chain-flow" aria-label="Цепочка последствий: Следы грызунов на складе"><div class="chain-step"><strong>Следы замечены</strong><small>Рядом с упаковками на складе обнаружены следы грызунов</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Признаки проигнорированы</strong><small>Сотрудник считает, что коробки защищают продукты, и продолжает их использовать</small><span class="kf-label">КФ · Проблемы с вредителями</span></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Риск загрязнения сохраняется</strong><small>Упаковки и продукты могли быть загрязнены</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step chain-step--result"><strong>Последствие для Гостя</strong><small>Загрязнённая продукция может попасть в блюдо</small></div></div></div></div></article>
+<article class="chain-infographic chain-infographic--risk">
+<button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Неутверждённое средство для уборки</strong><span class="chain-kf">КФ · Официальные поставщики</span></span><span class="chain-plus" aria-hidden="true">+</span></button>
+<div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">Средство для уборки закончилось. Сотрудник предлагает без согласования заменить его средством из ближайшего магазина.</p>
+<div class="chain-flow" aria-label="Цепочка последствий: Неутверждённое средство для уборки"><div class="chain-step"><strong>Средство закончилось</strong><small>Нужно продолжить уборку</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Неутверждённая замена</strong><small>Используют средство, не утверждённое для ресторана</small><span class="kf-label">КФ · Официальные поставщики</span></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Процедура не обеспечена</strong><small>Нельзя считать, что установленная процедура очистки и дезинфекции соблюдена</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step chain-step--result"><strong>Риск загрязнения</strong><small>Поверхности и продукты могут оказаться загрязнены</small></div></div></div></div></article>
+<article class="chain-infographic chain-infographic--risk"><button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Пэны с трещинами</strong><span class="chain-kf">КФ · Защита оборудования от загрязнений</span></span><span class="chain-plus" aria-hidden="true">+</span></button><div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">В ресторане продолжают использовать пэны с трещинами. В повреждениях могут скапливаться остатки продуктов и бактерии.</p><div class="chain-flow" aria-label="Цепочка последствий: Пэны с трещинами"><div class="chain-step"><strong>На пэнах появились трещины</strong><small>Повреждённые ёмкости остаются в работе</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Загрязнение скапливается</strong><small>В трещинах могут оставаться частицы продукта и бактерии</small><span class="kf-label">КФ · Защита оборудования от загрязнений</span></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Контакт с продуктом</strong><small>Продукцию помещают в повреждённый пэн</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step chain-step--result"><strong>Риск для Гостя</strong><small>Бактерии могут попасть в продукт и стать причиной отравления</small></div></div></div></div></article>
+<article class="chain-infographic chain-infographic--risk"><button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Сломанный щуп</strong><span class="chain-kf">КФ · Системы безопасности пищевых продуктов</span></span><span class="chain-plus" aria-hidden="true">+</span></button><div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">В ресторане сломался щуп. Сотрудники продолжают работу, ориентируясь на внешний вид продукта, поскольку выполнить достоверный замер температуры нечем.</p><div class="chain-flow" aria-label="Цепочка последствий: Сломанный щуп"><div class="chain-step"><strong>Щуп сломан</strong><small>Исправный прибор для замера недоступен</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Замер заменяют оценкой на глаз</strong><small>Температуру продукта не проверяют прибором</small><span class="kf-label">КФ · Системы безопасности пищевых продуктов</span></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Отклонение не обнаружено</strong><small>Внешний вид не подтверждает фактическую температуру</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step chain-step--result"><strong>Риск для Гостя</strong><small>Без замера температуры можно не заметить, что продукт сырой. Гость может отравиться</small></div></div></div></div></article></div><h4 class="chain-group-title chain-group-title--people"><span class="chain-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M5 21v-4a7 7 0 0 1 14 0v4M9 21v-5m6 5v-5"/></svg></span><span>Безопасность сотрудников</span></h4><div class="chain-infographics"><article class="chain-infographic chain-infographic--safety">
+            <button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Крышка фритюра</strong></span><span class="chain-plus" aria-hidden="true">+</span></button>
+            <div class="chain-panel"><div class="chain-panel__inner">
+            <p class="chain-detail">Или, например, ты будешь игнорировать, что сотрудники ставят крышку от фритюрных ванн над ваннами. Да, так удобней и быстрее. Но если фритюрное масло загорится, сотрудник не сможет для тушения возгорания протянуть руку к крышке через горящую ванну. В итоге сотрудник получит серьезные ожоги и попадет в больницу.</p>
+            <div class="chain-flow" aria-label="Цепочка последствий: крышка фритюра">
+              <div class="chain-step"><strong>Для удобства</strong><small>Крышку ставят над ванной</small></div><span class="chain-arrow" aria-hidden="true">→</span>
+              <div class="chain-step"><strong>Возгорание</strong><small>Фритюрное масло загорается</small></div><span class="chain-arrow" aria-hidden="true">→</span>
+              <div class="chain-step"><strong>Нет доступа</strong><small>До крышки нельзя дотянуться через огонь</small></div><span class="chain-arrow" aria-hidden="true">→</span>
+              <div class="chain-step chain-step--result"><strong>Ожоги</strong><small>Сотрудник попадает в больницу</small></div>
+            </div>
+            </div></div>
+          </article>
+<article class="chain-infographic chain-infographic--employee">
+            <button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Нарезание томатов без защитных перчаток</strong></span><span class="chain-plus" aria-hidden="true">+</span></button>
+            <div class="chain-panel"><div class="chain-panel__inner">
+            <p class="chain-detail">Стандарты защищают не только Гостей, но и сотрудников. При нарезании помидоров без защитных перчаток достаточно одного неловкого движения, чтобы получить серьёзную травму на производстве.</p>
+            <div class="chain-flow" aria-label="Цепочка последствий: нарезание без защитных перчаток">
+              <div class="chain-step"><strong>Спешка</strong><small>Сотрудник начинает нарезку без защитных перчаток</small></div><span class="chain-arrow" aria-hidden="true">→</span>
+              <div class="chain-step"><strong>Нет защиты</strong><small>Рука не защищена при работе с ножом</small></div><span class="chain-arrow" aria-hidden="true">→</span>
+              <div class="chain-step"><strong>Неловкое движение</strong><small>Нож соскальзывает во время нарезки</small></div><span class="chain-arrow" aria-hidden="true">→</span>
+              <div class="chain-step chain-step--result"><strong>Травма</strong><small>Сотруднику нужна медицинская помощь</small></div>
+            </div>
+            </div></div>
+          </article>
+<article class="chain-infographic chain-infographic--employee">
+            <button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Перчатки у фритюра и бройлера</strong></span><span class="chain-plus" aria-hidden="true">+</span></button>
+            <div class="chain-panel"><div class="chain-panel__inner">
+            <p class="chain-detail">Работать в перчатках у фритюра и бройлера запрещено стандартом. Горячее масло у фритюра и нагретые поверхности бройлера создают риск термического ожога.</p>
+            <div class="chain-flow" aria-label="Цепочка последствий: перчатки у фритюра и бройлера">
+              <div class="chain-step"><strong>Нарушение стандарта</strong><small>Сотрудник работает у фритюра или бройлера в перчатках</small></div><span class="chain-arrow" aria-hidden="true">→</span>
+              <div class="chain-step"><strong>Воздействие высокой температуры</strong><small>Горячее масло у фритюра или нагретая поверхность бройлера</small></div><span class="chain-arrow" aria-hidden="true">→</span>
+
+              <div class="chain-step chain-step--result"><strong>Термический ожог</strong><small>Сотруднику может потребоваться медицинская помощь</small></div>
+            </div>
+            </div></div>
+          </article></div><h4 class="chain-group-title chain-group-title--quality"><span class="chain-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></span><span>Качество продукта</span></h4><div class="chain-infographics"><article class="chain-infographic chain-infographic--quality">
+            <button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Сотрудник достаёт картошку раньше сигнала о готовности</strong></span><span class="chain-plus" aria-hidden="true">+</span></button>
+            <div class="chain-panel"><div class="chain-panel__inner">
+            <p class="chain-detail">Когда сотрудники раньше достают картошку из масла, заказ собирается быстро. Но Гости, недовольные вкусом получившейся картошки, тоже быстро напишут негативные отзывы в ресторан.</p>
+            <div class="chain-flow" aria-label="Цепочка последствий: картошка раньше сигнала">
+              <div class="chain-step"><strong>Спешка</strong><small>Картошку достают раньше сигнала</small></div><span class="chain-arrow" aria-hidden="true">→</span>
+              <div class="chain-step"><strong>Не тот стандарт</strong><small>Продукт не успевает приготовиться</small></div><span class="chain-arrow" aria-hidden="true">→</span>
+              <div class="chain-step"><strong>Недовольство</strong><small>Гостю не нравится вкус</small></div><span class="chain-arrow" aria-hidden="true">→</span>
+              <div class="chain-step chain-step--result"><strong>Негативный отзыв</strong><small>Гость пишет о ресторане</small></div>
+            </div>
+            </div></div>
+          </article></div>
+        <div class="callout red fade-in"><p>Как видишь, неприятности и трагедии случаются, даже если всего раз пропустить нарушение стандартов. Что с этим делать?</p></div>
+
+        <div class="knowledge-check fade-in">
+          <div class="match-question">
+            <h3>1. Что запускает опасную цепочку?</h3>
+            <p class="match-question__hint">Выбери один вариант ответа.</p>
+            <div class="match-options">
+              <button class="match-btn" type="button" onclick="pickMatch(this, 0, 'a')">Только повторяющееся нарушение одним сотрудником</button>
+              <button class="match-btn" type="button" onclick="pickMatch(this, 0, 'b')">Даже одно пропущенное нарушение</button>
+              <button class="match-btn" type="button" onclick="pickMatch(this, 0, 'c')">Нарушение, которое уже привело к заметной задержке заказа</button>
+            </div>
+            <div class="feedback-box match-question-feedback" id="match-feedback-0" aria-live="polite"></div>
+          </div>
+          <div class="match-question">
+            <h3>2. Какой диапазон последствий от одного пропущенного нарушения?</h3>
+            <p class="match-question__hint">Выбери один вариант ответа.</p>
+            <div class="match-options">
+              <button class="match-btn" type="button" onclick="pickMatch(this, 1, 'a')">От снижения скорости работы до жалобы Гостя</button>
+              <button class="match-btn" type="button" onclick="pickMatch(this, 1, 'b')">От ошибки одного сотрудника до серьёзного риска для здоровья</button>
+              <button class="match-btn" type="button" onclick="pickMatch(this, 1, 'c')">От недовольства Гостя до больницы и смерти</button>
+            </div>
+            <div class="feedback-box match-question-feedback" id="match-feedback-1" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <div class="next-row"><button class="btn-next" type="button" onclick="goNext('consequences', 'control')">К контролю сотрудников <span aria-hidden="true">→</span></button></div>
+      </div>
+    </section>
+
+    <section class="page" id="page-control">
+      <div class="chapter-banner chapter-banner--watch">
+        <div class="chapter-banner__inner">
+          <h2>Контроль сотрудников</h2>
+        </div>
+      </div>
+      <div class="content-wrap">
+        <div class="lead-statement fade-in">
+          <span class="lead-mark" aria-hidden="true">👁</span>
+          <p>Внимательно следи за тем, чтобы команда соблюдала стандарты.</p>
+        </div>
+        <div class="lead-statement lead-statement--orange fade-in">
+          <span class="lead-mark" aria-hidden="true">↯</span>
+          <p>Давай моментальную обратную связь сотрудникам, если ты замечаешь нарушения.</p>
+        </div>
+
+        <figure class="visual-image-slot fade-in" data-visual-image="images/control-in-the-moment" data-alt="Руководитель наблюдает за соблюдением процедуры в момент работы">
+          <div class="visual-image-slot__mark" aria-hidden="true">◎</div>
+          <figcaption><strong>Контроль работает в момент действия</strong><span>Будущая 3D-иллюстрация · наблюдение на смене</span></figcaption>
+        </figure>
+
+        <div class="section-heading fade-in">
+          <h3>Когда дать обратную связь?</h3>
+        </div>
+        <div class="comparison-grid fade-in">
+          <div class="comparison-card comparison-card--late">
+            <span class="comparison-time">ПОТОМ</span>
+            <h4>Если отложить</h4>
+            <ul>
+              <li>Нарушение успевает повториться</li>
+              <li>Сотрудник закрепляет неверное действие</li>
+              <li>Риск для Гостя остаётся</li>
+            </ul>
+          </div>
+          <div class="comparison-card comparison-card--now">
+            <span class="comparison-time">СРАЗУ</span>
+            <h4>Если отреагировать</h4>
+            <ul>
+              <li>Опасная цепочка останавливается</li>
+              <li>Сотрудник понимает, что исправить</li>
+              <li>Ты видишь результат</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="closed-practice fade-in" id="shift-practice">
+          <h3>Какие нарушения ты чаще всего замечаешь?</h3>
+          <p>Отметь все нарушения, которые чаще всего встречаются именно на твоей смене.</p>
+          <div class="closed-choice-grid">
+            <button class="closed-choice" type="button" data-key="tools" onclick="toggleClosedChoice(this)">Используют не тот инвентарь на станции</button>
+            <button class="closed-choice" type="button" data-key="hands" onclick="toggleClosedChoice(this)">Не моют руки после контакта с аллергеном</button>
+            <button class="closed-choice" type="button" data-key="timing" onclick="toggleClosedChoice(this)">Достают продукт раньше звукового сигнала</button>
+            <button class="closed-choice" type="button" data-key="lid" onclick="toggleClosedChoice(this)">Неправильно размещают крышку фритюра</button>
+            <button class="closed-choice" type="button" data-key="station" onclick="toggleClosedChoice(this)">Оставляют станцию без контроля в час пик</button>
+            <button class="closed-choice" type="button" data-key="feedback" onclick="toggleClosedChoice(this)">Не останавливают сотрудника после замеченного нарушения</button>
+            <button class="closed-choice" type="button" data-key="phu" onclick="toggleClosedChoice(this)">Игнорируют сигналы PHU</button>
+            <button class="closed-choice" type="button" data-key="mixing" onclick="toggleClosedChoice(this)">Перемешивают старую продукцию со свежей</button>
+            <button class="closed-choice" type="button" data-key="station-hands" onclick="toggleClosedChoice(this)">Не моют руки при смене станции</button>
+          </div>
+          <div class="interaction-actions"><button class="btn-check" type="button" onclick="checkShiftChoices()">Сохранить выбор</button><div class="feedback-box" id="shift-feedback" aria-live="polite"></div></div>
+        </div>
+
+        <div class="next-module-bridge fade-in">
+          <div><strong>Алгоритм действий</strong><p>Теперь разберём, что делать после того, как ты заметил нарушение.</p></div>
+        </div>
+
+        <div class="next-row"><button class="btn-next" type="button" onclick="goNext('control', 'algorithm')">Освоить алгоритм <span aria-hidden="true">→</span></button></div>
+      </div>
+    </section>
+
+    <section class="page" id="page-algorithm">
+      <div class="chapter-banner chapter-banner--steps">
+        <div class="chapter-banner__inner">
+          <h2>Алгоритм действий</h2>
+        </div>
+      </div>
+      <div class="content-wrap">
+        <div class="body-text fade-in">
+          <p>Когда ты заметил нарушение, важно не ограничиться замечанием. Алгоритм помогает остановить риск, а обратная связь по ФПР — «Факт, Последствие, Рекомендация» — провести разговор так, чтобы сотрудник понял стандарт и смог повторить правильное действие. Давай соберём их в одну последовательность.</p>
+        </div>
+
+        <div class="section-heading fade-in">
+          <h3>Собери 7 шагов в правильном порядке</h3>
+          <p>Расставь карточки перетаскиванием или кнопками со стрелками. На проверку порядка — две попытки.</p>
+        </div>
+        <div class="sortable-list fade-in" id="sortable-list">
+          <div class="sort-item" draggable="true" data-idx="2"><span class="sort-handle" aria-hidden="true">⠿</span><span>Дай обратную связь по ФПР</span></div>
+          <div class="sort-item" draggable="true" data-idx="0"><span class="sort-handle" aria-hidden="true">⠿</span><span>Заметь нарушение стандарта</span></div>
+          <div class="sort-item" draggable="true" data-idx="4"><span class="sort-handle" aria-hidden="true">⠿</span><span>Дай потренироваться или подключи наставника</span></div>
+          <div class="sort-item" draggable="true" data-idx="1"><span class="sort-handle" aria-hidden="true">⠿</span><span>Останови риск и отреагируй сразу</span></div>
+          <div class="sort-item" draggable="true" data-idx="6"><span class="sort-handle" aria-hidden="true">⠿</span><span>Вернись через несколько дней и проверь</span></div>
+          <div class="sort-item" draggable="true" data-idx="3"><span class="sort-handle" aria-hidden="true">⠿</span><span>Покажи, как выполнить процедуру правильно</span></div>
+          <div class="sort-item" draggable="true" data-idx="5"><span class="sort-handle" aria-hidden="true">⠿</span><span>Передай информацию коллегам</span></div>
+        </div>
+        <div class="interaction-actions fade-in">
+          <button class="btn-check" type="button" onclick="checkSortOrder()">Проверить порядок</button>
+          <div class="feedback-box" id="sort-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="fpr-orbits fade-in" aria-label="Факт, Последствие, Рекомендация">
+          <div class="fpr-orbit"><span>Ф</span><strong>Факт</strong></div><i aria-hidden="true">→</i>
+          <div class="fpr-orbit"><span>П</span><strong>Последствие</strong></div><i aria-hidden="true">→</i>
+          <div class="fpr-orbit"><span>Р</span><strong>Рекомендация</strong></div>
+        </div>
+
+        <figure class="visual-image-slot fade-in" data-visual-image="images/fpr-dialogue" data-alt="Руководитель спокойно даёт сотруднику обратную связь по алгоритму Факт Последствие Рекомендация">
+          <div class="visual-image-slot__mark" aria-hidden="true">●</div>
+          <figcaption><strong>Спокойный разговор один на один</strong><span>Будущая 3D-иллюстрация · обратная связь по ФПР</span></figcaption>
+        </figure>
+
+        <div class="section-heading fade-in fpr-heading">
+          <h3>Разбери обратную связь по частям</h3>
+          <p>ФПР помогает построить конкретную обратную связь: назвать факт нарушения, объяснить последствие и дать рекомендацию — что сотруднику нужно делать правильно.</p>
+        </div>
+        <div class="fpr-grid fade-in">
+          <article class="fpr-card fpr-card--fact"><span>Ф</span><h4>Факт</h4><p><em>Пример:</em> Я вижу, что ты правильно солишь картошку, при этом достаешь ее из фритюра на 10 секунд раньше, чем положено. Это нарушение.</p></article>
+          <article class="fpr-card fpr-card--effect"><span>П</span><h4>Последствие</h4><p>Оно приводит к тому, что картошка остается сырой и не хрустит.</p></article>
+          <article class="fpr-card fpr-card--result"><span>Р</span><h4>Рекомендация</h4><p>Доставай картошку из масла только после звукового сигнала о готовности!</p></article>
+        </div>
+
+        <div class="voice-card fade-in">
+          <button class="voice-card__icon voice-card__icon--button" id="voice-play" type="button" onclick="toggleFprAudio()" aria-label="Воспроизвести пример обратной связи">▶</button>
+          <div class="voice-card__copy"><strong>Послушай пример целиком</strong><p id="fpr-transcript">Пример: Я вижу, что ты правильно солишь картошку, при этом достаешь ее из фритюра на 10 секунд раньше, чем положено. Это нарушение. Оно приводит к тому, что картошка остается сырой и не хрустит. Доставай картошку из масла только после звукового сигнала о готовности!</p></div>
+          <audio class="voice-audio" id="fpr-audio" src="./assets/fpr-feedback-v2.mp3" preload="auto" playsinline aria-label="Пример обратной связи"><source src="./assets/fpr-feedback-v2.mp3" type="audio/mpeg">Твой браузер не поддерживает воспроизведение аудио.</audio>
+        </div>
+
+        <p class="after-feedback-note fade-in">Более подробно про обратную связь ты узнаешь из курса «Обратная связь и как ее давать». Пройди его, если еще не проходил.</p>
+
+        <div class="after-feedback fade-in">
+          <div class="section-heading after-feedback-heading"><h3>После обратной связи</h3><p>Разговор — только начало. Дальше нужно закрепить правильное действие.</p></div>
+          <div class="after-feedback-grid">
+            <article class="after-feedback-card"><span class="after-feedback-tag">Потренировать</span><p>Дай сотруднику потренироваться правильно выполнять процедуру. Если у него и после не будет получаться, поставь Тренера-наставника его обучать.</p></article>
+            <article class="after-feedback-card"><span class="after-feedback-tag">Передать информацию</span><p>Лично передай информацию только тем коллегам, которые смогут продолжить наблюдение: какое нарушение было замечено, что уже отработали с сотрудником и за каким действием нужно проследить. Не выноси ошибку на общее обсуждение.</p></article>
+            <article class="after-feedback-card"><span class="after-feedback-tag">Проверить позже</span><p>Проверь, что сотрудник усвоил процедуру и больше не повторяет своих ошибок. Вернись к нему через несколько дней и посмотри, как он теперь работает.</p></article>
+          </div>
+        </div>
+
+        <figure class="visual-image-slot fade-in" data-visual-image="images/stop-and-correct" data-alt="Руководитель останавливает передачу продукта и помогает сотруднику исправить действие">
+          <div class="visual-image-slot__mark" aria-hidden="true">!</div>
+          <figcaption><strong>Сначала остановить риск, затем помочь исправить</strong><span>Будущая 3D-иллюстрация · ситуация на линии сборки</span></figcaption>
+        </figure>
+
+        <section class="shift-trainer" id="shift-trainer" aria-labelledby="trainer-title">
+          <p class="trainer-eyebrow">Практика на смене</p>
+          <h3 id="trainer-title">От замечания — к исправлению ошибки</h3>
+          <p>Час пик. Сотрудник торопится и достаёт картошку раньше сигнала. Пройди все семь шагов: выбери свои действия и подходящую обратную связь.</p>
+          <ol id="trainer-stepper" class="trainer-stepper" aria-label="Семь шагов алгоритма"></ol>
+          <p id="trainer-progress" class="trainer-progress" aria-live="polite"></p>
+          <h4 id="trainer-question" tabindex="-1"></h4>
+          <div id="trainer-options" class="match-options"></div>
+          <div id="trainer-feedback" class="feedback-box" role="status"></div>
+          <div class="trainer-navigation">
+            <button id="trainer-back" class="btn-secondary" type="button" onclick="previousTrainerStep()" hidden>← Предыдущий шаг</button>
+            <button id="trainer-next" class="btn-next" type="button" onclick="nextTrainerStep()" disabled>Следующий шаг →</button>
+          </div>
+          <div id="trainer-summary" class="trainer-summary" hidden>
+            <h4>Ты прошёл весь управленческий цикл</h4>
+            <p>Заметь нарушение → останови риск → дай ОС по ФПР → покажи правильное действие → дай потренироваться → передай информацию → проверь через несколько дней.</p>
+            <p>На реальной смене результат разговора — правильное действие сотрудника, которое сохраняется после обучения.</p>
+          </div>
+        </section>
+        <div class="next-row"><button class="btn-next" type="button" onclick="goNext('algorithm', 'system')">К системе контроля <span aria-hidden="true">→</span></button></div>
+      </div>
+    </section>
+
+    <section class="page" id="page-system">
+      <div class="chapter-banner chapter-banner--system">
+        <div class="chapter-banner__inner">
+          <h2>Контроль как система</h2>
+        </div>
+      </div>
+      <div class="content-wrap">
+        <div class="section-heading fade-in">
+          <h3>Три действия, которые нельзя разрывать</h3>
+        </div>
+        <figure class="visual-image-slot fade-in" data-visual-image="images/control-system-cycle" data-alt="Пятиминутка, наблюдение и повторная проверка образуют систему контроля">
+          <div class="visual-image-slot__mark" aria-hidden="true">↻</div>
+          <figcaption><strong>Контроль — это повторяющийся цикл</strong><span>Будущая 3D-иллюстрация · три действия в одной сцене</span></figcaption>
+        </figure>
+
+        <div class="control-cycle fade-in" aria-label="Цикл контроля: наблюдение, реакция, проверка">
+          <div class="cycle-card cycle-card--observe"><span class="cycle-num">01</span><strong>Наблюдение</strong><p>Постоянно наблюдай за ситуацией в ресторане: все ли стандарты соблюдены.</p></div>
+          <div class="cycle-arrow" aria-hidden="true">→</div>
+          <div class="cycle-card cycle-card--react"><span class="cycle-num">02</span><strong>Реакция</strong><p>Давай моментальную обратную связь, как только замечаешь нарушения.</p></div>
+          <div class="cycle-arrow" aria-hidden="true">→</div>
+          <div class="cycle-card cycle-card--check"><span class="cycle-num">03</span><strong>Проверка</strong><p>Наблюдай, не нарушает ли повторно сотрудник стандарты — когда ему уже дали обратную связь.</p></div>
+          <div class="cycle-loop" aria-hidden="true">Цикл повторяется ↺</div>
+        </div>
+
+        <blockquote class="responsibility-quote fade-in">
+          <span>Твоя зона ответственности</span>
+          <p>Контролируй, чтобы сотрудники соблюдали стандарты. Это твоя зона ответственности. Пропущенное нарушение может закончиться трагедией.</p>
+        </blockquote>
+
+        <div class="closed-practice reflection-card--dark fade-in" id="control-practice">
+          <h3>Как ты организуешь контроль в своей смене?</h3>
+          <p>Для каждого этапа выбери действие, которое действительно удерживает стандарт.</p>
+          <div class="control-choice-grid">
+            <div class="control-choice-group"><strong>Наблюдение</strong><button class="system-choice" type="button" data-stage="observe" data-choice="right" onclick="pickSystemChoice(this)">Регулярно проверяю станцию и соблюдение стандартов</button><button class="system-choice" type="button" data-stage="observe" data-choice="wrong" onclick="pickSystemChoice(this)">Проверяю станцию в начале смены и дальше ориентируюсь на отчёт старшего</button></div>
+            <div class="control-choice-group"><strong>Реакция</strong><button class="system-choice" type="button" data-stage="react" data-choice="right" onclick="pickSystemChoice(this)">Даю обратную связь сразу по ФПР</button><button class="system-choice" type="button" data-stage="react" data-choice="wrong" onclick="pickSystemChoice(this)">Фиксирую нарушение и обсуждаю его на общем разборе в конце смены</button></div>
+            <div class="control-choice-group"><strong>Проверка</strong><button class="system-choice" type="button" data-stage="check" data-choice="right" onclick="pickSystemChoice(this)">Возвращаюсь через несколько дней</button><button class="system-choice" type="button" data-stage="check" data-choice="wrong" onclick="pickSystemChoice(this)">Прошу сотрудника подтвердить, что понял, и считаю контроль завершённым</button></div>
+          </div>
+          <div class="interaction-actions"><button class="btn-check" type="button" onclick="checkControlCycle()">Проверить систему</button><div class="feedback-box" id="control-feedback" aria-live="polite"></div></div>
+        </div>
+
+        <div class="next-row"><button class="btn-next" type="button" onclick="goNext('system', 'conclusion')">Подвести итоги <span aria-hidden="true">→</span></button></div>
+      </div>
+    </section>
+
+    <section class="page" id="page-conclusion">
+      <div class="chapter-banner chapter-banner--final">
+        <div class="chapter-banner__inner">
+          <h2>Заключение</h2>
+        </div>
+      </div>
+      <div class="content-wrap">
+        <div class="final-intro fade-in">
+          <span class="final-check" aria-hidden="true">✓</span>
+          <div><h3>Теперь собери всё в один управленческий цикл</h3></div>
+        </div>
+
+        <ol class="takeaways takeaways--seven fade-in">
+          <li><span>01</span><div><strong>Заметь нарушение</strong><p>Наблюдай за работой команды и соблюдением стандарта.</p></div></li>
+          <li><span>02</span><div><strong>Отреагируй сразу</strong><p>Останови риск. Не переноси корректирующую обратную связь на потом.</p></div></li>
+          <li><span>03</span><div><strong>Дай обратную связь по ФПР</strong><p>Назови факт, объясни последствие и задай рекомендацию.</p></div></li>
+          <li><span>04</span><div><strong>Покажи правильное действие</strong><p>Убедись, что сотрудник понимает процедуру и может её повторить.</p></div></li>
+          <li><span>05</span><div><strong>Дай потренироваться</strong><p>Если не получается, подключи Тренера-наставника.</p></div></li>
+          <li><span>06</span><div><strong>Передай информацию</strong><p>Сообщи коллегам в ресторане о нарушении процедуры.</p></div></li>
+          <li><span>07</span><div><strong>Проверь через несколько дней</strong><p>Вернись к сотруднику и убедись, что ошибка не повторяется.</p></div></li>
+        </ol>
+
+        <div class="download-card fade-in">
+          <div class="download-card__preview" aria-hidden="true"><span>7</span><small>шагов</small></div>
+          <div class="download-card__copy"><h3>Алгоритм действий при нарушении</h3><p>Скачай одностраничный чек-лист и используй его во время смены.</p></div>
+          <a class="btn-download" href="assets/pamyatka-7-shagov.pdf" download>Скачать PDF <span aria-hidden="true">↓</span></a>
+        </div>
+
+        <section class="final-quiz fade-in" id="final-quiz" aria-labelledby="final-quiz-title">
+          <p class="trainer-eyebrow">Проверка знаний</p>
+          <h3 id="final-quiz-title">Итоговый тест</h3>
+          <p>Ответь на пять вопросов по материалам курса.</p>
+
+          <article class="final-question" data-final-question="0">
+            <h4>1. Что может запустить опасную цепочку последствий?</h4>
+            <div class="match-options">
+              <button class="match-btn" type="button" onclick="answerFinal(0, 0)">Только нарушение, которое повторилось несколько раз</button>
+              <button class="match-btn" type="button" onclick="answerFinal(0, 1)">Даже одно нарушение, которое не остановили вовремя</button>
+              <button class="match-btn" type="button" onclick="answerFinal(0, 2)">Только нарушение, после которого Гость оставил жалобу</button>
+            </div>
+            <div class="feedback-box" id="final-feedback-0" aria-live="polite"></div>
+          </article>
+
+          <article class="final-question" data-final-question="1">
+            <h4>2. Сотрудник заметил у раковины просроченное мыло для рук. Что нужно сделать в первую очередь?</h4>
+            <div class="match-options">
+              <button class="match-btn" type="button" onclick="answerFinal(1, 0)">Оставить мыло до конца часа пик, а затем заменить</button>
+              <button class="match-btn" type="button" onclick="answerFinal(1, 1)">Прекратить использование мыла и сразу действовать по установленной процедуре</button>
+              <button class="match-btn" type="button" onclick="answerFinal(1, 2)">Проверить, достаточно ли хорошо мыло пенится</button>
+            </div>
+            <div class="feedback-box" id="final-feedback-1" aria-live="polite"></div>
+          </article>
+
+          <article class="final-question" data-final-question="2">
+            <h4>3. Что означает ФПР?</h4>
+            <div class="match-options">
+              <button class="match-btn" type="button" onclick="answerFinal(2, 0)">Факт — Последствие — Рекомендация</button>
+              <button class="match-btn" type="button" onclick="answerFinal(2, 1)">Факт — Проверка — Реакция</button>
+              <button class="match-btn" type="button" onclick="answerFinal(2, 2)">Формулировка — Причина — Результат</button>
+            </div>
+            <div class="feedback-box" id="final-feedback-2" aria-live="polite"></div>
+          </article>
+
+          <article class="final-question" data-final-question="3">
+            <h4>4. При замере температура говяжьей котлеты ниже 68 °C. Как поступить?</h4>
+            <div class="match-options">
+              <button class="match-btn" type="button" onclick="answerFinal(3, 0)">Продолжить работу, если котлета выглядит готовой</button>
+              <button class="match-btn" type="button" onclick="answerFinal(3, 1)">Не использовать продукт и сразу действовать по установленной процедуре</button>
+              <button class="match-btn" type="button" onclick="answerFinal(3, 2)">Повторить замер позднее, когда станет меньше заказов</button>
+            </div>
+            <div class="feedback-box" id="final-feedback-3" aria-live="polite"></div>
+          </article>
+
+          <article class="final-question" data-final-question="4">
+            <h4>5. Что нужно сделать после обратной связи и тренировки сотрудника?</h4>
+            <div class="match-options">
+              <button class="match-btn" type="button" onclick="answerFinal(4, 0)">Считать вопрос закрытым, если сотрудник сказал, что всё понял</button>
+              <button class="match-btn" type="button" onclick="answerFinal(4, 1)">Вернуться через несколько дней и проверить действие в работе</button>
+              <button class="match-btn" type="button" onclick="answerFinal(4, 2)">Ждать жалобы или повторного заметного последствия</button>
+            </div>
+            <div class="feedback-box" id="final-feedback-4" aria-live="polite"></div>
+          </article>
+          <p class="final-quiz-status" id="final-quiz-status" role="status"></p>
+        </section>
+
+        <div class="finish-card fade-in">
+          <p>Безопасность — это не отсутствие ошибок. Это твоя готовность заметить отклонение, отреагировать и убедиться, что оно не повторится.</p>
+          <button class="btn-next" type="button" data-ku-complete disabled>Завершить курс</button>
+        </div>
+        <div class="next-row"><button class="btn-secondary" type="button" onclick="navigateTo('home')">Вернуться к оглавлению</button></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/ku-scorm.js?v=rules-final-3"></script>
+  <script src="script.js?v=webtutor-1"></script>
+  <script src="progression.js?v=41"></script>
+  <script src="visual-refresh.js?v=1"></script>
+</body>
+</html>
