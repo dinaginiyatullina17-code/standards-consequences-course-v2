@@ -94,17 +94,12 @@
           <p>Когда ты не даешь своевременную обратную связь сотрудникам, с Гостями могут произойти неприятности и даже опасные ситуации. Недовольство Гостя, его попадание в больницу и смерть — вот к чему может привести пропущенное нарушение стандарта.</p>
         </blockquote>
 
-        <div class="visual-pause visual-pause--chain fade-in" aria-label="Пример: температура котлеты ниже 68 градусов, отклонение не замечено, Гость может получить сырой продукт и отравиться">
-          <strong class="visual-pause__title">Где остановить цепочку?</strong>
-          <div class="risk-chain">
-            <span>Температура котлеты ниже 68 °C</span>
-            <i aria-hidden="true">→</i>
-            <span>Отклонение не замечено</span>
-            <i aria-hidden="true">→</i>
-            <span>Гость может получить сырой продукт и отравиться</span>
-          </div>
-          <p class="visual-pause__action">Проверь результат замера и останови передачу продукта до исправления.</p>
-        </div>
+        <figure class="domino-example fade-in">
+          <figcaption><strong>Где остановить цепочку?</strong></figcaption>
+          <img src="images/domino-beef-chain.png" alt="Руководитель останавливает первое домино: низкая температура котлеты не должна привести к пропущенному нарушению и риску отравления Гостя">
+          <div class="domino-example__labels"><span>Котлета ниже 68 °C</span><span>Отклонение не замечено</span><span>Риск отравления Гостя</span></div>
+          <p>Проверь замер и останови передачу продукта.</p>
+        </figure>
 
         <div class="next-row"><button class="btn-next" type="button" onclick="goNext('intro', 'consequences')">К последствиям <span aria-hidden="true">→</span></button></div>
       </div>
@@ -134,7 +129,7 @@
         </div>
         <div class="pyramid-detail" id="pyramid-detail" aria-live="polite">Выбери любой уровень пирамиды.</div>
 
-        <figure class="visual-image-slot fade-in" data-visual-image="images/risk-chain-shift" data-alt="Сотрудник замечает нарушение и останавливает опасную цепочку на смене">
+        <figure class="visual-image-slot fade-in" data-visual-image="images/risk-chain-shift-v2" data-alt="Сотрудник замечает нарушение и останавливает опасную цепочку на смене">
           <div class="visual-image-slot__mark" aria-hidden="true">✦</div>
           <figcaption><strong>Одно нарушение — целая цепочка последствий</strong><span>Сцена на кухне · нарушение стандарта</span></figcaption>
         </figure>
@@ -253,11 +248,6 @@
           <p>Давай моментальную обратную связь сотрудникам, если ты замечаешь нарушения.</p>
         </div>
 
-        <figure class="visual-image-slot fade-in" data-visual-image="images/control-in-the-moment" data-alt="Руководитель наблюдает за соблюдением процедуры в момент работы">
-          <div class="visual-image-slot__mark" aria-hidden="true">◎</div>
-          <figcaption><strong>Контроль работает в момент действия</strong><span>Наблюдение на смене</span></figcaption>
-        </figure>
-
         <div class="section-heading fade-in">
           <h3>Когда дать обратную связь?</h3>
         </div>
@@ -336,11 +326,6 @@
           <div class="feedback-box" id="sort-feedback" aria-live="polite"></div>
         </div>
 
-        <figure class="visual-image-slot fade-in" data-visual-image="images/fpr-dialogue" data-alt="Руководитель спокойно даёт сотруднику обратную связь по алгоритму Факт Последствие Рекомендация">
-          <div class="visual-image-slot__mark" aria-hidden="true">●</div>
-          <figcaption><strong>Спокойный разговор один на один</strong><span>Обратная связь по ФПР</span></figcaption>
-        </figure>
-
         <div class="section-heading fade-in fpr-heading">
           <h3>Разбери обратную связь по частям</h3>
           <p>ФПР помогает построить конкретную обратную связь: назвать факт нарушения, объяснить последствие и дать рекомендацию — что сотруднику нужно делать правильно.</p>
@@ -351,9 +336,19 @@
           <article class="fpr-card fpr-card--result"><span>Р</span><h4>Рекомендация</h4><p>Доставай картошку из масла только после звукового сигнала о готовности!</p></article>
         </div>
 
+        <figure class="floor-feedback-visual fade-in">
+          <img src="images/wet-floor-feedback.png" alt="Сотрудник моет пол без таблички «Мокрый пол», руководитель замечает риск и даёт обратную связь">
+          <figcaption>
+            <strong>Обратная связь на смене</strong>
+            <p><b>Факт.</b> Ты моешь пол, но не выставил табличку «Мокрый пол».</p>
+            <p><b>Последствие.</b> На мокром полу кто-то может поскользнуться и получить травму.</p>
+            <p><b>Рекомендация.</b> Сейчас выставь табличку и огради влажную зону. В следующий раз делай это до уборки.</p>
+          </figcaption>
+        </figure>
+
         <div class="voice-card fade-in">
           <button class="voice-card__icon voice-card__icon--button" id="voice-play" type="button" onclick="toggleFprAudio()" aria-label="Воспроизвести пример обратной связи">▶</button>
-          <div class="voice-card__copy"><strong>Послушай пример целиком</strong><p id="fpr-transcript">Пример: Я вижу, что ты правильно солишь картошку, при этом достаешь ее из фритюра на 10 секунд раньше, чем положено. Это нарушение. Оно приводит к тому, что картошка остается сырой и не хрустит. Доставай картошку из масла только после звукового сигнала о готовности!</p></div>
+          <div class="voice-card__copy"><strong>Послушай другой пример — про картошку</strong><p id="fpr-transcript">Пример: Я вижу, что ты правильно солишь картошку, при этом достаешь ее из фритюра на 10 секунд раньше, чем положено. Это нарушение. Оно приводит к тому, что картошка остается сырой и не хрустит. Доставай картошку из масла только после звукового сигнала о готовности!</p></div>
           <audio class="voice-audio" id="fpr-audio" src="./assets/fpr-feedback-v2.mp3" preload="auto" playsinline aria-label="Пример обратной связи"><source src="./assets/fpr-feedback-v2.mp3" type="audio/mpeg">Твой браузер не поддерживает воспроизведение аудио.</audio>
         </div>
 
@@ -368,10 +363,9 @@
           </div>
         </div>
 
-        <figure class="visual-image-slot fade-in" data-visual-image="images/stop-and-correct" data-alt="Руководитель останавливает передачу продукта и помогает сотруднику исправить действие">
-          <div class="visual-image-slot__mark" aria-hidden="true">!</div>
-          <figcaption><strong>Сначала остановить риск, затем помочь исправить</strong><span>Ситуация на линии сборки</span></figcaption>
-        </figure>
+        <div class="after-feedback-flow fade-in" aria-label="После обратной связи: практика, адресная передача информации, повторная проверка">
+          <span><b>01</b> Практика</span><i aria-hidden="true">→</i><span><b>02</b> Передача адресно</span><i aria-hidden="true">→</i><span><b>03</b> Проверка позже</span>
+        </div>
 
         <section class="shift-trainer" id="shift-trainer" aria-labelledby="trainer-title">
           <p class="trainer-eyebrow">Практика на смене</p>
@@ -406,7 +400,7 @@
         <div class="section-heading fade-in">
           <h3>Три действия, которые нельзя разрывать</h3>
         </div>
-        <figure class="visual-image-slot fade-in" data-visual-image="images/control-system-cycle" data-alt="Пятиминутка, наблюдение и повторная проверка образуют систему контроля">
+        <figure class="visual-image-slot fade-in" data-visual-image="images/control-system-cycle-v2" data-alt="Пятиминутка и проверка на смене: сотрудник без перчаток измеряет температуру котлеты на стойке борта, держа секундомер">
           <div class="visual-image-slot__mark" aria-hidden="true">↻</div>
           <figcaption><strong>Контроль — это повторяющийся цикл</strong><span>Три действия в одной сцене</span></figcaption>
         </figure>
@@ -452,13 +446,22 @@
           <div><h3>Теперь собери всё в один управленческий цикл</h3></div>
         </div>
 
+        <div class="management-cycle-visual fade-in" aria-label="Управленческий цикл: заметить риск, исправить действие, вернуться и проверить результат">
+          <div class="management-cycle-visual__step"><span>1–2</span><strong>Заметь и останови</strong><small>Риск не идёт дальше</small></div>
+          <i aria-hidden="true">→</i>
+          <div class="management-cycle-visual__step"><span>3–6</span><strong>Объясни и закрепи</strong><small>Сотрудник действует правильно</small></div>
+          <i aria-hidden="true">→</i>
+          <div class="management-cycle-visual__step"><span>7</span><strong>Проверь позже</strong><small>Стандарт сохраняется на смене</small></div>
+          <div class="management-cycle-visual__return">↶ Повторяй цикл при каждом новом риске</div>
+        </div>
+
         <ol class="takeaways takeaways--seven fade-in">
           <li><span>01</span><div><strong>Заметь нарушение</strong><p>Наблюдай за работой команды и соблюдением стандарта.</p></div></li>
           <li><span>02</span><div><strong>Отреагируй сразу</strong><p>Останови риск. Не переноси корректирующую обратную связь на потом.</p></div></li>
           <li><span>03</span><div><strong>Дай обратную связь по ФПР</strong><p>Назови факт, объясни последствие и задай рекомендацию.</p></div></li>
           <li><span>04</span><div><strong>Покажи правильное действие</strong><p>Убедись, что сотрудник понимает процедуру и может её повторить.</p></div></li>
           <li><span>05</span><div><strong>Дай потренироваться</strong><p>Если не получается, подключи Тренера-наставника.</p></div></li>
-          <li><span>06</span><div><strong>Передай информацию</strong><p>Сообщи коллегам в ресторане о нарушении процедуры.</p></div></li>
+          <li><span>06</span><div><strong>Передай информацию</strong><p>Лично передай информацию тем коллегам, которые продолжат наблюдение.</p></div></li>
           <li><span>07</span><div><strong>Проверь через несколько дней</strong><p>Вернись к сотруднику и убедись, что ошибка не повторяется.</p></div></li>
         </ol>
 
