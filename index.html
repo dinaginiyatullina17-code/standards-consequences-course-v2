@@ -96,7 +96,7 @@
 
         <figure class="domino-example fade-in">
           <figcaption><strong>Где остановить цепочку?</strong></figcaption>
-          <img src="images/domino-beef-chain.png" alt="Руководитель останавливает первое домино: низкая температура котлеты не должна привести к пропущенному нарушению и риску отравления Гостя">
+          <img src="images/domino-beef-thinking.png" alt="Руководитель обдумывает цепочку: температура котлеты ниже нормы, отклонение пропущено, Гость может получить сырой продукт и отравиться">
           <div class="domino-example__labels"><span>Котлета ниже 68 °C</span><span>Отклонение не замечено</span><span>Риск отравления Гостя</span></div>
           <p>Проверь замер и останови передачу продукта.</p>
         </figure>
@@ -129,20 +129,15 @@
         </div>
         <div class="pyramid-detail" id="pyramid-detail" aria-live="polite">Выбери любой уровень пирамиды.</div>
 
-        <figure class="visual-image-slot fade-in" data-visual-image="images/risk-chain-shift-v2" data-alt="Сотрудник замечает нарушение и останавливает опасную цепочку на смене">
-          <div class="visual-image-slot__mark" aria-hidden="true">✦</div>
-          <figcaption><strong>Одно нарушение — целая цепочка последствий</strong><span>Сцена на кухне · нарушение стандарта</span></figcaption>
-        </figure>
-
         <div class="section-heading fade-in examples-heading">
           <h3 class="section-heading__title">Реальные цепочки на смене</h3>
-          <p class="reveal-prompt"><strong>Раскрой каждую цепочку.</strong><br>Нажми на название примера или на «+», чтобы увидеть, к чему приводит нарушение.</p>
+          <p class="reveal-prompt"><strong>Изучи каждую цепочку.</strong><br>Листай КФ стрелками влево и вправо и раскрывай каждый пример.</p>
         </div>
         <p class="body-text">Одно нарушение может запустить цепочку последствий. В примерах о пищевой безопасности отмечены КФ — важнейшие факторы безопасности пищевых продуктов. Другие примеры показывают, как стандарты защищают сотрудников и качество продукта.</p>
         <h4 class="chain-group-title chain-group-title--food"><span class="chain-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6z"/><path d="m8 12 3 3 5-6"/></svg></span><span>Безопасность пищевых продуктов</span></h4>
-        <div class="chain-infographics"><article class="chain-infographic chain-infographic--risk">
+        <div class="kf-carousel" aria-label="Восемь критических факторов безопасности пищевых продуктов"><div class="kf-carousel__nav"><button class="kf-carousel__prev" type="button" aria-label="Предыдущий КФ">← Назад</button><span class="kf-carousel__status" role="status" aria-live="polite">1 из 8</span><button class="kf-carousel__next" type="button" aria-label="Следующий КФ">Вперёд →</button></div><div class="chain-infographics chain-infographics--carousel"><article class="chain-infographic chain-infographic--risk">
 <button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Просроченное мыло для рук</strong><span class="chain-kf">КФ · Правила личной гигиены</span></span><span class="chain-plus" aria-hidden="true">+</span></button>
-<div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">Сотрудник заметил, что у мыла для рук истёк срок годности, но продолжил им пользоваться. Такое средство нельзя считать подходящим для соблюдения процедуры мытья рук.</p>
+<div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">Сотрудник заметил, что у мыла для рук истёк срок годности, но продолжил им пользоваться. Такое средство нельзя считать подходящим для соблюдения процедуры мытья рук.</p><img class="chain-case-image" src="images/expired-soap-kf.png" alt="Сотрудники замечают просроченное мыло у раковины и прекращают его использовать">
 <div class="chain-flow" aria-label="Цепочка последствий: Просроченное мыло для рук"><div class="chain-step"><strong>Срок годности истёк</strong><small>Просроченное мыло остаётся у раковины</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Мыло продолжают использовать</strong><small>Сотрудники моют руки средством с истёкшим сроком годности</small><span class="kf-label">КФ · Правила личной гигиены</span></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Процедура не обеспечена</strong><small>Нельзя быть уверенным, что мытьё рук выполнено с подходящим средством</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step chain-step--result"><strong>Риск для Гостя</strong><small>Загрязнение с рук может попасть в продукт и стать причиной отравления</small></div></div></div></div></article>
 <article class="chain-infographic chain-infographic--risk">
 <button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Контакт с рыбой и креветками</strong><span class="chain-kf">КФ · Защита от загрязнений</span></span><span class="chain-plus" aria-hidden="true">+</span></button>
@@ -156,7 +151,7 @@
 <div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">Средство для уборки закончилось. Сотрудник предлагает без согласования заменить его средством из ближайшего магазина.</p>
 <div class="chain-flow" aria-label="Цепочка последствий: Неутверждённое средство для уборки"><div class="chain-step"><strong>Средство закончилось</strong><small>Нужно продолжить уборку</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Неутверждённая замена</strong><small>Используют средство, не утверждённое для ресторана</small><span class="kf-label">КФ · Официальные поставщики</span></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Процедура не обеспечена</strong><small>Нельзя считать, что установленная процедура очистки и дезинфекции соблюдена</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step chain-step--result"><strong>Риск загрязнения</strong><small>Поверхности и продукты могут оказаться загрязнены</small></div></div></div></div></article>
 <article class="chain-infographic chain-infographic--risk"><button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Пэны с трещинами</strong><span class="chain-kf">КФ · Защита оборудования от загрязнений</span></span><span class="chain-plus" aria-hidden="true">+</span></button><div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">В ресторане продолжают использовать пэны с трещинами. В повреждениях могут скапливаться остатки продуктов и бактерии.</p><div class="chain-flow" aria-label="Цепочка последствий: Пэны с трещинами"><div class="chain-step"><strong>На пэнах появились трещины</strong><small>Повреждённые ёмкости остаются в работе</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Загрязнение скапливается</strong><small>В трещинах могут оставаться частицы продукта и бактерии</small><span class="kf-label">КФ · Защита оборудования от загрязнений</span></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Контакт с продуктом</strong><small>Продукцию помещают в повреждённый пэн</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step chain-step--result"><strong>Риск для Гостя</strong><small>Бактерии могут попасть в продукт и стать причиной отравления</small></div></div></div></div></article>
-<article class="chain-infographic chain-infographic--risk"><button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Сломанный щуп</strong><span class="chain-kf">КФ · Системы безопасности пищевых продуктов</span></span><span class="chain-plus" aria-hidden="true">+</span></button><div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">В ресторане сломался щуп. Сотрудники продолжают работу, ориентируясь на внешний вид продукта, поскольку выполнить достоверный замер температуры нечем.</p><div class="chain-flow" aria-label="Цепочка последствий: Сломанный щуп"><div class="chain-step"><strong>Щуп сломан</strong><small>Исправный прибор для замера недоступен</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Замер заменяют оценкой на глаз</strong><small>Температуру продукта не проверяют прибором</small><span class="kf-label">КФ · Системы безопасности пищевых продуктов</span></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Отклонение не обнаружено</strong><small>Внешний вид не подтверждает фактическую температуру</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step chain-step--result"><strong>Риск для Гостя</strong><small>Без замера температуры можно не заметить, что продукт сырой. Гость может отравиться</small></div></div></div></div></article></div><h4 class="chain-group-title chain-group-title--people"><span class="chain-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M5 21v-4a7 7 0 0 1 14 0v4M9 21v-5m6 5v-5"/></svg></span><span>Безопасность сотрудников</span></h4><div class="chain-infographics"><article class="chain-infographic chain-infographic--safety">
+<article class="chain-infographic chain-infographic--risk"><button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Сломанный щуп</strong><span class="chain-kf">КФ · Системы безопасности пищевых продуктов</span></span><span class="chain-plus" aria-hidden="true">+</span></button><div class="chain-panel"><div class="chain-panel__inner"><p class="chain-detail">В ресторане сломался щуп. Сотрудники продолжают работу, ориентируясь на внешний вид продукта, поскольку выполнить достоверный замер температуры нечем.</p><div class="chain-flow" aria-label="Цепочка последствий: Сломанный щуп"><div class="chain-step"><strong>Щуп сломан</strong><small>Исправный прибор для замера недоступен</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Замер заменяют оценкой на глаз</strong><small>Температуру продукта не проверяют прибором</small><span class="kf-label">КФ · Системы безопасности пищевых продуктов</span></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step"><strong>Отклонение не обнаружено</strong><small>Внешний вид не подтверждает фактическую температуру</small></div><span class="chain-arrow" aria-hidden="true">→</span><div class="chain-step chain-step--result"><strong>Риск для Гостя</strong><small>Без замера температуры можно не заметить, что продукт сырой. Гость может отравиться</small></div></div></div></div></article></div></div><h4 class="chain-group-title chain-group-title--people"><span class="chain-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M5 21v-4a7 7 0 0 1 14 0v4M9 21v-5m6 5v-5"/></svg></span><span>Безопасность сотрудников</span></h4><div class="chain-infographics"><article class="chain-infographic chain-infographic--safety">
             <button class="chain-toggle" type="button" onclick="toggleChain(this)" aria-expanded="false"><span class="chain-infographic__head"><strong>Крышка фритюра</strong></span><span class="chain-plus" aria-hidden="true">+</span></button>
             <div class="chain-panel"><div class="chain-panel__inner">
             <p class="chain-detail">Или, например, ты будешь игнорировать, что сотрудники ставят крышку от фритюрных ванн над ваннами. Да, так удобней и быстрее. Но если фритюрное масло загорится, сотрудник не сможет для тушения возгорания протянуть руку к крышке через горящую ванну. В итоге сотрудник получит серьезные ожоги и попадет в больницу.</p>
@@ -253,6 +248,7 @@
         </div>
         <div class="comparison-grid fade-in">
           <div class="comparison-card comparison-card--late">
+            <img class="comparison-card__image" src="images/feedback-later.png" alt="Порцию картошки достали до сигнала, а руководитель отложил обратную связь">
             <span class="comparison-time">ПОТОМ</span>
             <h4>Если отложить</h4>
             <ul>
@@ -262,6 +258,7 @@
             </ul>
           </div>
           <div class="comparison-card comparison-card--now">
+            <img class="comparison-card__image" src="images/feedback-now.png" alt="Руководитель сразу останавливает передачу картошки, приготовленной с нарушением, и даёт обратную связь">
             <span class="comparison-time">СРАЗУ</span>
             <h4>Если отреагировать</h4>
             <ul>
@@ -336,19 +333,19 @@
           <article class="fpr-card fpr-card--result"><span>Р</span><h4>Рекомендация</h4><p>Доставай картошку из масла только после звукового сигнала о готовности!</p></article>
         </div>
 
-        <figure class="floor-feedback-visual fade-in">
-          <img src="images/wet-floor-feedback.png" alt="Сотрудник моет пол без таблички «Мокрый пол», руководитель замечает риск и даёт обратную связь">
+        <figure class="fpr-feedback-visual fade-in">
+          <img src="images/fpr-fries-feedback.png" alt="Руководитель обсуждает с сотрудником картошку, которую достали из фритюра до сигнала готовности">
           <figcaption>
             <strong>Обратная связь на смене</strong>
-            <p><b>Факт.</b> Ты моешь пол, но не выставил табличку «Мокрый пол».</p>
-            <p><b>Последствие.</b> На мокром полу кто-то может поскользнуться и получить травму.</p>
-            <p><b>Рекомендация.</b> Сейчас выставь табличку и огради влажную зону. В следующий раз делай это до уборки.</p>
+            <p><b>Факт.</b> Ты достал картошку из фритюра на 10 секунд раньше сигнала.</p>
+            <p><b>Последствие.</b> Она может остаться сырой и не хрустеть.</p>
+            <p><b>Рекомендация.</b> Доставай картошку только после сигнала готовности.</p>
           </figcaption>
         </figure>
 
         <div class="voice-card fade-in">
           <button class="voice-card__icon voice-card__icon--button" id="voice-play" type="button" onclick="toggleFprAudio()" aria-label="Воспроизвести пример обратной связи">▶</button>
-          <div class="voice-card__copy"><strong>Послушай другой пример — про картошку</strong><p id="fpr-transcript">Пример: Я вижу, что ты правильно солишь картошку, при этом достаешь ее из фритюра на 10 секунд раньше, чем положено. Это нарушение. Оно приводит к тому, что картошка остается сырой и не хрустит. Доставай картошку из масла только после звукового сигнала о готовности!</p></div>
+          <div class="voice-card__copy"><strong>Послушай пример целиком</strong><p id="fpr-transcript">Пример: Я вижу, что ты правильно солишь картошку, при этом достаешь ее из фритюра на 10 секунд раньше, чем положено. Это нарушение. Оно приводит к тому, что картошка остается сырой и не хрустит. Доставай картошку из масла только после звукового сигнала о готовности!</p></div>
           <audio class="voice-audio" id="fpr-audio" src="./assets/fpr-feedback-v2.mp3" preload="auto" playsinline aria-label="Пример обратной связи"><source src="./assets/fpr-feedback-v2.mp3" type="audio/mpeg">Твой браузер не поддерживает воспроизведение аудио.</audio>
         </div>
 
@@ -361,10 +358,6 @@
             <article class="after-feedback-card"><span class="after-feedback-tag">Передать информацию</span><p>Лично передай информацию только тем коллегам, которые смогут продолжить наблюдение: какое нарушение было замечено, что уже отработали с сотрудником и за каким действием нужно проследить. Не выноси ошибку на общее обсуждение.</p></article>
             <article class="after-feedback-card"><span class="after-feedback-tag">Проверить позже</span><p>Проверь, что сотрудник усвоил процедуру и больше не повторяет своих ошибок. Вернись к нему через несколько дней и посмотри, как он теперь работает.</p></article>
           </div>
-        </div>
-
-        <div class="after-feedback-flow fade-in" aria-label="После обратной связи: практика, адресная передача информации, повторная проверка">
-          <span><b>01</b> Практика</span><i aria-hidden="true">→</i><span><b>02</b> Передача адресно</span><i aria-hidden="true">→</i><span><b>03</b> Проверка позже</span>
         </div>
 
         <section class="shift-trainer" id="shift-trainer" aria-labelledby="trainer-title">
@@ -400,7 +393,7 @@
         <div class="section-heading fade-in">
           <h3>Три действия, которые нельзя разрывать</h3>
         </div>
-        <figure class="visual-image-slot fade-in" data-visual-image="images/control-system-cycle-v2" data-alt="Пятиминутка и проверка на смене: сотрудник без перчаток измеряет температуру котлеты на стойке борта, держа секундомер">
+        <figure class="visual-image-slot fade-in" data-visual-image="images/three-actions-pan" data-alt="Три действия: пятиминутка, замер котлет в пэне на стойке борта и повторная проверка позже">
           <div class="visual-image-slot__mark" aria-hidden="true">↻</div>
           <figcaption><strong>Контроль — это повторяющийся цикл</strong><span>Три действия в одной сцене</span></figcaption>
         </figure>
