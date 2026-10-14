@@ -31,6 +31,14 @@
     slides.forEach(slide => {
       const trigger = slide.querySelector(".chain-toggle");
       const panel = slide.querySelector(".chain-panel");
+      if (!trigger.querySelector(".chain-kf")) {
+        const category = document.createElement("span");
+        category.className = "chain-kf";
+        category.textContent = slide.classList.contains("chain-infographic--quality")
+          ? "Качество продукта"
+          : "Безопасность сотрудников";
+        trigger.querySelector(".chain-infographic__head").append(category);
+      }
       trigger.removeAttribute("onclick");
       trigger.setAttribute("aria-expanded", "true");
       trigger.setAttribute("tabindex", "-1");
