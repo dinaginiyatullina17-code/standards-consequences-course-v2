@@ -1,7 +1,7 @@
 /* Пробное визуальное обновление старой версии курса. */
 
 .hero-placeholder--cover {
-  background: var(--ku-brand-strong) url("assets/hero-stop-standard-v3.png") center / cover no-repeat;
+  background: var(--ku-brand-strong) url("assets/hero-checklist-v1.png") center / cover no-repeat;
 }
 
 .hero-placeholder--cover::after {
@@ -88,7 +88,6 @@
 .domino-example__labels { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; padding: .8rem 1rem 0; }
 .domino-example__labels span { padding: .6rem; border-radius: var(--ku-radius-m); background: var(--ku-surface); font-size: .86rem; font-weight: 750; }
 .domino-example__labels span:last-child { color: white; background: var(--ku-danger); }
-.domino-example p { margin: .8rem 1rem 1.1rem; font-size: .9rem; font-weight: 700; }
 
 .fpr-feedback-visual { position: relative; margin: 2rem auto; overflow: hidden; border-radius: var(--ku-radius-xl); box-shadow: var(--ku-shadow-m); background: var(--ku-brand-strong); }
 .fpr-feedback-visual img { display: block; width: 100%; height: auto; }
@@ -107,7 +106,7 @@
 .chain-infographics--carousel { display: block; max-width: none; margin: 0; }
 .chain-infographics--carousel .chain-infographic[hidden] { display: none !important; }
 .chain-infographics--carousel .chain-panel.open { max-height: 2400px; }
-.chain-case-image { display: block; width: 100%; height: clamp(9rem, 18vw, 12rem); margin: .65rem 0; border-radius: var(--ku-radius-m); object-fit: cover; object-position: center 43%; }
+.chain-case-image { display: block; width: 100%; height: clamp(18rem, 30vw, 22rem); margin: .65rem 0; border-radius: var(--ku-radius-m); object-fit: cover; object-position: center 55%; }
 
 #page-consequences .content-wrap > .body-text:first-child p { margin-bottom: .35rem; }
 #page-consequences .content-wrap > .body-text:first-child + .section-heading { margin-top: 1.25rem; }
