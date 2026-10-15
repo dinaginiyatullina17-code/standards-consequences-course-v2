@@ -25,8 +25,18 @@
     const previous = carousel.querySelector(".chain-carousel__prev");
     const next = carousel.querySelector(".chain-carousel__next");
     const status = carousel.querySelector(".chain-carousel__status");
+    const followup = [
+      document.getElementById("chain-summary"),
+      document.getElementById("chain-quiz")
+    ].filter(Boolean);
     let current = 0;
     if (slides.length === 1) carousel.querySelector(".chain-carousel__nav").hidden = true;
+
+    function updateFollowup() {
+      const allViewed = slides.every(slide =>
+        slide.querySelector(".chain-toggle").classList.contains("was-read"));
+      followup.forEach(block => { block.hidden = !allViewed; });
+    }
 
     slides.forEach(slide => {
       const trigger = slide.querySelector(".chain-toggle");
@@ -54,6 +64,7 @@
       const trigger = slide.querySelector(".chain-toggle");
       if (trigger.dataset.revealId && typeof recordReveal === "function" &&
           !trigger.classList.contains("was-read")) recordReveal(trigger);
+      updateFollowup();
     }
 
     function show(index) {
@@ -81,6 +92,11 @@
     const observer = new IntersectionObserver(markViewed, { threshold: 0.1 });
     observer.observe(carousel);
     addEventListener("scroll", markViewed, { passive: true });
+    if (document.readyState === "loading") {
+      addEventListener("DOMContentLoaded", updateFollowup);
+    } else {
+      updateFollowup();
+    }
     show(0);
   });
 })();
