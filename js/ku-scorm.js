@@ -2,7 +2,7 @@
   "use strict";
   let api = null, lmsReady = false, closed = false, learnerId = "", LS_KEY = "";
   const COURSE_ID = document.documentElement.getAttribute("data-ku-course") || location.pathname;
-  const LOCAL_PROGRESS_REVISION = "27";
+  const LOCAL_PROGRESS_REVISION = "28";
   const RESTART_KEY = "ku-restart::" + COURSE_ID;
   const startedAt = Date.now();
   const state = { unlocked: 1, done: {}, vars: {}, completed: false };
