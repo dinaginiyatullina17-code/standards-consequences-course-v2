@@ -2,6 +2,7 @@
   "use strict";
   let api = null, lmsReady = false, closed = false, learnerId = "", LS_KEY = "";
   const COURSE_ID = document.documentElement.getAttribute("data-ku-course") || location.pathname;
+  const LOCAL_PROGRESS_REVISION = "26";
   const RESTART_KEY = "ku-restart::" + COURSE_ID;
   const startedAt = Date.now();
   const state = { unlocked: 1, done: {}, vars: {}, completed: false };
@@ -31,7 +32,7 @@
     if (lmsReady) {
       try { localStorage.removeItem(legacyKey); } catch (error) {}
       LS_KEY = learnerId ? legacyKey + "::" + learnerId : "";
-    } else LS_KEY = legacyKey + "::local";
+    } else LS_KEY = legacyKey + "::local::" + LOCAL_PROGRESS_REVISION;
   }
   function snapshot() { return { unlocked: state.unlocked, done: state.done, vars: state.vars, completed: state.completed }; }
   function serialize() {
